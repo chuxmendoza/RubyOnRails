@@ -1,0 +1,29 @@
+<div class="container">
+<%= form_for(marca) do |f| %>
+  <% if marca.errors.any? %>
+   <center> <div id="error_explanation">
+      <h2> Error:</h2>
+
+      <ul style="list-style: none;">
+      <% marca.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+    </center>
+  <% end %>
+<div class="form-horizontal">
+ <div class="form-group">
+    <%= f.label :nombre,:class => 'control-label col-sm-2' %>
+     <div class="col-sm-8">
+    <%= f.text_field :nombre,:class => 'form-control'  %>
+    </div>
+  </div>
+ <div class="col-sm-offset-2 col-sm-10">
+  <div class="actions">
+    <%= f.submit "Guardar Marca",:class => 'btn btn-primary'%>
+  </div>
+  </div>
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<center class="container"> <h3>Producto Detalles</h3> 
+<br/>
+<div class="div-ver">
+<p>
+   <strong>Marca:</strong>
+  <%= @producto.marca.nombre %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @producto.nombre %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @producto.precio %>
+</p>
+
+<p>
+  <strong>Descripción:</strong>
+  <%= @producto.descripcion %>
+</p>
+
+<%= link_to 'Editar', edit_producto_path(@producto) %> |
+<%= link_to 'Regresar', productos_path %>
+</div>
+
+</center>
+

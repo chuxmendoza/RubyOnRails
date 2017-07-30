@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<center> <h1>Productos</h1> </center>
+ <div class="container">  
+ <table class="table table-striped">
+
+  <thead>
+    <tr>
+      <th>Marca</th>
+      <th>Nombre</th>
+      <th>Precio</th>
+      <th><center>Descripcion</center></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @productos.each do |producto| %>
+      <tr>
+        <td><%= producto.marca.nombre %></td>
+        <td><%= producto.nombre %></td>
+        <td><%= (producto.precio).round(2) %></td>
+        <td><%= producto.descripcion %></td>
+        <td><%= link_to 'Mostrar', producto %></td>
+        <td><%= link_to 'Editar', edit_producto_path(producto) %></td>
+        <td><%= link_to 'Eliminar', producto, method: :delete, data:  { confirm: "¿Estás seguro de borrar el producto: #{producto.nombre}?" }  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<a href="/productos/new" class="btn btn-primary" role="button" style="float: right;">Agregar Producto</a>
+<div> 
+<label>Valor de productos:</label>
+<label style="font-size: 20px" ><%= @suma_precios %></label>
+</div>
+</div>

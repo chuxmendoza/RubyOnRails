@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<center> <h1>Marcas</h1> </center>
+<div class="container"> <table class="table table-striped">
+  <thead>
+    <tr>
+      <th><center> Nombre </center> </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @marcas.each do |marca| %>
+      <tr>
+        <td><%= marca.nombre %></td>
+        <td><%= link_to 'Mostrar', marca %></td>
+        <td><%= link_to 'Editar', edit_marca_path(marca) %></td>
+        <td><%= link_to 'Eliminar', marca, method: :delete, data: { confirm: "¿Estás seguro de borrar la marca #{marca.nombre}?" } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<a href="/marcas/new" class="btn btn-primary" role="button" style="float: right;">Agregar Marca</a>
+</div>
+
+<br>
+

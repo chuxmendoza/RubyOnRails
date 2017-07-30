@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<center  class="container"> <h3>Marca Detalles</h3> 
+<br/>
+<div class="div-ver">
+<p style="font-size: 20px">
+  <strong>Nombre:</strong>
+  <%= @marca.nombre %>
+</p>
+
+<%= link_to 'Editar', edit_marca_path(@marca) %> |
+<%= link_to 'Regresar', marcas_path %>
+</div>
+
+</center>

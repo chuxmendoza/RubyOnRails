@@ -1,0 +1,52 @@
+<div class="container">
+<%= simple_form_for(producto) do |f| %>
+  <% if producto.errors.any? %>
+  <center>
+    <div id="error_explanation">
+      <h2>Error</h2>
+
+      <ul style="list-style: none;">
+      <% producto.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  </center>
+  <% end %>
+  <div class="form-horizontal">
+<div class="form-group">
+  <%= f.label "Marca",:class => 'control-label col-sm-2' %>
+  <div class="col-sm-9">
+  <%= f.collection_select :marca_id, Marca.all, :id, :nombre, {}, {class: "form-control"} %>
+</div>
+</div>
+
+  <div class="form-group">
+    <%= f.label "Nombre",:class => 'control-label col-sm-2' %>
+     <div class="col-sm-9">
+    <%= f.text_field :nombre,:class => 'form-control'  %>
+      </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :precio,:class => 'control-label col-sm-2'%>
+     <div class="col-sm-4">
+    <%= f.number_field :precio,:class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :descripcion,:class => 'control-label col-sm-2' %>
+    <div class="col-sm-9">
+    <%= f.text_area :descripcion,:class => 'form-control' %>
+    </div>
+  </div>
+
+ <div class="col-sm-offset-2 col-sm-10">
+  <div class="actions">
+    <%= f.submit "Guardar Producto",:class => 'btn btn-primary'%>
+  </div>
+ </div>
+  </div>
+<% end %>
+</div>

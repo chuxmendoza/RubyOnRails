@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Aplicacion</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style type="text/css" media="screen">
+    body{
+    	background-color: #ecf0f5;
+    }
+    .navbar-default {
+    background-color: #3b9881;
+    border-color: #3b9881;
+	}.navbar-default .navbar-nav > li > a {
+    color: #fff;
+	}
+	.navbar-default .navbar-brand {
+    color: #fff;
+		}
+	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #ecf0f5;
+    background-color: transparent;
+	}
+	.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+    color: #ecf0f5;
+    background-color: transparent;
+	}
+  .div-ver{
+    background-color:white;
+    font-size: 20px; 
+  }
+	table{
+		background-color: #fff;
+
+   		text-align: center;   
+	}
+    </style>
+  </head>
+
+  <body>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">HOME</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/marcas">Marcas</a></li>
+      <li><a href="/productos">Productos</a></li>
+    </ul>
+  </div>
+</nav>
+    <%= yield %>
+  </body>
+</html>
